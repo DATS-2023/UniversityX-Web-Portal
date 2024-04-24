@@ -3,3 +3,4 @@ pymysql
 pyodbc
 python-dotenv
 cryptography
+pytest
