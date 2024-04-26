@@ -1,10 +1,28 @@
 {% extends "base.html" %}
 
-{% block title %}instructors{% endblock %}
+{% block title %}Instructors{% endblock %}
 
-{% block header %}instructors{% endblock %}
+{% block header %}Instructors{% endblock %}
 
 
 {% block content %}
-    <h5 class="display-5">We are currently building this page</h5>
+<h5 class="display-5">List of Instructors</h5>    
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Instructor_ID</th>
+            <th>Name</th>
+            <th>Department</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for instructor in instructors %}
+        <tr>
+            <td>{{ instructor.id }}</td>
+            <td>{{ instructor.name }}</td>
+            <td>{{ instructor.department_id }}</td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
 {% endblock %}

@@ -1,12 +1,33 @@
 {% extends "base.html" %}
 
-{% block title %}Rent a Vehicle{% endblock %}
+{% block title %}Scheduling{% endblock %}
 
-{% block header %}Rent a Vehicle{% endblock %}
+{% block header %}Scheduling{% endblock %}
 
 {% block content %}
-    <h5 class="display-5">We are currently building this page</h5>
-    <form action="{{ url_for('rent_vehicle') }}" method="post">
-        <button type="submit" class="btn btn-primary">Rent</button>
-    </form>
+<h5 class="display-5">List of Schedules</h5>    
+<table class="table table-striped">
+        <thead>
+            <th> Course ID </th>
+            <th> Instructor ID</th>
+            <th> Room ID</th>
+            <th> Term </th>
+            <th> Term Year</th>
+            <th> Weekday</th>
+            <th> Start Time</th>
+            <th> Duration</th>
+        </thead>
+        {% for schedule in schedules %}
+        <tr>
+            <td> {{ schedule.course_id }} </td>
+            <td> {{ schedule.instructor_id }} </td>
+            <td> {{ schedule.room_id }} </td>
+            <td> {{ schedule.term }} </td>
+            <td> {{ schedule.termyear }} </td>
+            <td> {{ schedule.weekday }} </td>
+            <td> {{ schedule.start_time }} </td>
+            <td> {{ schedule.duration }} </td>
+        </tr>
+        {% endfor %}
+    </table>
 {% endblock %}

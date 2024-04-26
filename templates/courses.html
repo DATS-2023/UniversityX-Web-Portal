@@ -5,5 +5,28 @@
 {% block header %}Courses{% endblock %}
 
 {% block content %}
-    <h5 class="display-5">We are currently building this page</h5>
+<h5 class="display-5">List of Courses</h5>    
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Course_ID</th>
+            <th>Title</th>
+            <th>Department</th>
+            <th>Credits</th>
+            <th>Weight</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% for course in courses %}
+        <tr>
+            <td>{{ course.id }}</td>
+            <td>{{ course.title }}</td>
+            <td>{{ course.departmentid }}</td>
+            <td>{{ course.credit }}</td>
+            <td>{{ course.weight }}</td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
 {% endblock %}

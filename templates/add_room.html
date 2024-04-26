@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Add Room{% endblock %}
+
+{% block header %}Add Room{% endblock %}
+
+{% block content %}
+    <form action="{{ url_for('add_room') }}" method="post">
+        <div class="form-group">
+            <label for="name">Room Name:</label>
+            <input id="title" name="title" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+
+    <script>
+        // Fetch data from the API and populate the select control
+        // This is not a great example of using client-side JavaScript and api calls to populate a select control
+        // This is just an example to demonstrate client-side JavaScript and api calls
+        function fetchAndPopulateSelectControl(url, selectControl) {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    Object.entries(data).forEach(([id, name]) => {
+                        const option = document.createElement('option');
+                        option.value = id;
+                        option.textContent = name;
+                        selectControl.appendChild(option);
+                    });
+                });
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+        });
+    </script>
+{% endblock %}

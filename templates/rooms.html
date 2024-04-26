@@ -1,11 +1,27 @@
 {% extends "base.html" %}
 
-{% block title %}rooms{% endblock %}
+{% block title %}Rooms{% endblock %}
 
-{% block header %}rooms{% endblock %}
+{% block header %}Rooms{% endblock %}
 
 
 {% block content %}
-    <h5 class="display-5">We are currently building this page</h5>
+    <h5 class="display-5">List of Rooms</h5>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Room ID</th>
+                <th>Room Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for room in rooms %}
+            <tr>
+                <td>{{ room.id }}</td>
+                <td>{{ room.name }}</td>
+            </tr>
+            {% endfor %}
+    
+        </tbody>
 {% endblock %}
 
