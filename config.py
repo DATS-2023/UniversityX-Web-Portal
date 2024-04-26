@@ -12,6 +12,8 @@ class ConfigBase:
     Base configuration class. Contains configuration options that are common to all environments
     """
     SECRET_KEY = os.getenv('SECRET_KEY', os.urandom(16))
+    USERNAME = os.getenv('MYSQL_USERNAME', None)
+    PASSWORD = os.getenv('MYSQL_PASSWORD', None)
     DEBUG = False
     TESTING = False
     # Add more configuration options here like database connection strings etc.
